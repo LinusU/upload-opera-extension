@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "repository": "LinusU/upload-opera-extension",
+  "scripts": {
+    "test": "standard"
+  },
   "dependencies": {
     "puppeteer": "^1.0.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
   }
 }
