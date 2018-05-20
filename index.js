@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer')
 async function uploadOperaExtension (options) {
   const debugModeEnabled = Boolean(process.env.DEBUG_UPLOAD_OPERA_EXTENSION)
 
-  const browser = await puppeteer.launch({ headless: !debugModeEnabled })
+  const browser = await puppeteer.launch({ headless: !debugModeEnabled, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   const page = await browser.newPage()
 
   try {
