@@ -17,7 +17,7 @@ const options = {
   email: process.env.OPERA_EMAIL,
   password: process.env.OPERA_PASSWORD,
   extensionId: process.env.OPERA_EXT_ID,
-  zipFile: 'my-extension.zip'
+  zipPath: 'my-extension.zip'
 }
 
 uploadOperaExtension(options).then(() => {
@@ -34,7 +34,7 @@ Upload an extension to addons.opera.com.
 - `options.email` (string) - Email used to log in
 - `options.password` (string) - Password used to log in
 - `options.extensionId` (string) - ID of the extension to submit a new version of
-- `options.zipFile` (string) - Path to the zip file that will be submitted
+- `options.zipPath` (string) - Path to the zip file that will be submitted
 
 The extension ID can be found by inspecting the URL of the extension in the developer dashboard.
 
