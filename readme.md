@@ -36,6 +36,10 @@ Upload an extension to addons.opera.com.
 - `options.extensionId` (string) - ID of the extension to submit a new version of
 - `options.zipPath` (string) - Path to the zip file that will be submitted
 
+Optional:
+- `options.debug` (boolean) - Same as setting the environmental variable `DEBUG_UPLOAD_OPERA_EXTENSION`
+- `options.disableSandbox` (boolean) - Disable sandbox. Only use this if you experience issues with the sandbox!
+
 The extension ID can be found by inspecting the URL of the extension in the developer dashboard.
 
 Returns a Promise that will either reject with an error, or resolve to `undefined`.
