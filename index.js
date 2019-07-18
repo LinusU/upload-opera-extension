@@ -7,20 +7,13 @@ async function uploadOperaExtension (options) {
   const page = await browser.newPage()
 
   try {
-    // Go to main page
-    await page.goto('https://addons.opera.com')
-
-    // Go to login page
-    await page.click('a#login')
+    // Directly go to the extension page - the browser will be redirected to the auth page and back once the login succeeded
+    await page.goto(`https://addons.opera.com/developer/package/${options.extensionId}/`)
 
     // Perform login
     await page.type('input[name=email]', options.email)
     await page.type('input[name=password]', options.password)
     await page.click('button[type=submit]')
-    await page.waitForSelector('div#account')
-
-    // Go to extensions page
-    await page.goto(`https://addons.opera.com/developer/package/${options.extensionId}/`)
 
     // Wait for, and then click, "Versions"
     await page.waitForSelector('ul.nav .uib-tab:nth-child(2) a')
@@ -43,7 +36,7 @@ async function uploadOperaExtension (options) {
       try {
         errorText = await page.evaluate(() => document.querySelector('flash-message div.alert span.ng-scope').innerText)
       } catch (_) {
-        errorText = 'Unknown error occurde while uploading extension'
+        errorText = 'Unknown error occurred while uploading extension'
       }
 
       throw new Error(errorText)
