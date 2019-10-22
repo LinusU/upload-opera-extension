@@ -1,6 +1,6 @@
 # Upload Opera Extension
 
-Submit an update to a Opera Extension with one simple function call.
+Submit an update to an Opera Extension with one simple function call.
 
 ## Installation
 
@@ -21,7 +21,7 @@ const options = {
 }
 
 uploadOperaExtension(options).then(() => {
-  console.log('Extension submitted for modernation 🙌')
+  console.log('Extension submitted for moderation 🙌')
 })
 ```
 
